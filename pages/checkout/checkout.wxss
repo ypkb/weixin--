@@ -1,0 +1,210 @@
+/* pages/checkout/checkout.wxss */
+
+.bg {
+  background-image: linear-gradient(0deg, white, rgb(0, 146, 255));
+  /*基于0度顺时针旋转45deg*//* background-image: linear-gradient(45deg, red, yellow, blue, green); *//*基于0度逆时针旋转45deg*//* background-image: linear-gradient(-45deg, red, yellow, blue, green); */
+}
+
+.delivery-info {
+  color: #fff;
+  padding: 4%;
+}
+
+.delivery-info text, .delivery-to-customer {
+  font-size: 30rpx;
+}
+
+.delivery-to-address {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-detail {
+  height: calc(82% - 160rpx);
+  width: 90%;
+  margin: 3%;
+  padding: 2%;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.shop-name {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-weight: bold;
+  position: relative;
+}
+
+.shop-name::before {
+  content: "";
+  width: 100%;
+  height: 2rpx;
+  background-color: #ddd;
+  position: absolute;
+  top: calc(98% + 10rpx);
+  left: 0;
+}
+
+.shop-name::after {
+  content: "";
+  width: 100%;
+  height: 6rpx;
+  background-color: #ddd;
+  position: absolute;
+  top: 98%;
+  left: 0;
+}
+
+.order-list {
+  padding-top: 20rpx;
+  font-size: 35rpx;
+}
+
+.item {
+  width: 100%;
+  padding: 10rpx 0;
+  display: flex;
+  height: 81rpx;
+  line-height: 81rpx;
+}
+
+.item .thumbnail {
+  width: 81rpx;
+  height: 81rpx;
+  flex: 1;
+}
+
+.item .name {
+  flex: 3;
+  padding-left: 10rpx;
+}
+
+.item .num {
+  flex: 1;
+  text-align: right;
+}
+
+.item .price {
+  flex: 1;
+  text-align: right;
+}
+.extra-costs {
+  line-height: 40rpx;
+}
+.extra-costs .box, .delivery-cost {
+  /* margin: 10rpx 0; */
+  padding: 10rpx 0;
+  display: flex;
+  width: 100%;
+  font-size: 35rpx;
+  position: relative;
+}
+.extra-costs .box::before{
+  content: "";
+  width: 100%;
+  height: 2rpx;
+  background-color: #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.delivery-cost::before{
+  content: "";
+  width: 100%;
+  height: 2rpx;
+  background-color: #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.delivery-cost::after{
+  content: "";
+  width: 100%;
+  height: 2rpx;
+  background-color: #ddd;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.extra-costs .tag {
+  font-size: 20rpx;
+  padding: 2rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 4rpx;
+  background-color: rgb(238, 246, 252);
+  position: relative;
+  top: -2rpx;
+}
+
+.extra-costs .cost-name {
+  flex: 2;
+}
+
+.extra-costs .cost {
+  flex: 1;
+  text-align: right;
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index:1;
+}
+
+.footer::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.footer .cart {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  line-height: 100rpx;
+}
+
+.footer .cart-info {
+  flex: 3;
+  display: flex;
+  background-color: rgb(62, 66, 69);
+  color: #fff;
+  padding-left: 20rpx;
+}
+
+.total-price{
+  padding-left: 10rpx;
+}
+.total-price::after{
+  content: '|';
+  color: #ddd;
+  padding: 0 10rpx;
+}
+.benifit{
+  font-size: 30rpx;
+  color: #ddd;
+}
+
+.footer .btn-create-order {
+  flex: 1;
+  background-color: rgb(79, 83, 86);
+  text-align: center;
+  color: #ddd;
+}
+.footer .cart-empty{
+  color: #ddd;
+  font-size: 30rpx;
+}
+.submitable{
+  color: #fff !important;
+  background-color: #67C23A !important;
+}

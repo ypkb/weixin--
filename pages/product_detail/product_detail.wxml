@@ -1,0 +1,66 @@
+<view class='container'>
+  <view class='product-item-detail section'>
+    <view class='product-item-img'>
+      <image style='width:100%;' src='../../assets/guoqie01.jpg'></image>
+    </view>
+    <view class='product-info'>
+      <view class='product-item-name'>
+        特色果切{{product.id}}
+      </view>
+      <view class='product-item-content'>
+        包含：苹果、香蕉、奇异果、火龙果、百香果
+      </view>
+      <view class='product-item-price'>
+        月售50 好评率100%
+      </view>
+      <view class='product-item-price'>
+        ¥20
+      </view>
+      <view class='product-item-user-num'>
+                <image wx:if='{{product.num > 0}}' src='../../assets/minus.png' bindtap='bindMinus' data-id='{{product.id}}'></image>
+                <text wx:if='{{product.num > 0}}'>{{product.num}}</text>
+                <image src='../../assets/plus.png' bindtap='bindPlus' data-id='{{product.id}}'></image>
+              </view>
+    </view>
+  </view>
+  <view class='product-item-recipe'>
+    <block wx:for='{{pItem.recipeImgUrls}}' wx:index='idx' wx:key='idx'>
+      <image src='{{recipeImgUrl}}'></image>
+    </block>
+  </view>
+
+  <view class='footer'>
+    <view class='cart'>
+      <view wx:if='{{showCartDetail}}' class='cart-detail'>
+        <view class=''></view>
+        <view class='toolbar'>
+          <view>已选果切</view>
+          <view bindtap='removeAll'>清空</view>
+        </view>
+        <view class='cart-product-list'>
+          <block wx:for='{{cartinfo.products}}' wx:key='{{idx}}' wx:for-index='idx'>
+            <view wx:if='{{item.num > 0}}' class='cart-product-item {{idx > 1 ? "border-solid-top" : ""}}'>
+              <view class='cart-pname'>{{item.name}}</view>
+              <view class='cart-pprice'>¥{{item.price * item.num}}</view>
+              <view class='cart-user-num'>
+                <view class='product-item-user-num'>
+                  <image wx:if='{{item.num > 0}}' src='../../assets/minus.png' bindtap='bindMinus' data-id='{{item.id}}'></image>
+                  <text wx:if='{{item.num > 0}}'>{{item.num}}</text>
+                  <image src='../../assets/plus.png' bindtap='bindPlus' data-id='{{item.id}}'></image>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class='cart-info' data-expand-cart-detail='{{showCartDetail}}' bindtap='toggleCartDetail'>
+        <image wx:if='{{cartinfo.totalPrice == 0}}' src='../../assets/cart-empty.png'></image>
+        <image wx:else src='../../assets/cart.png'></image>
+        <view wx:if='{{cartinfo.totalPrice > 0}}' class='total-price'>¥{{cartinfo.totalPrice}}</view>
+        <view wx:else class='total-price cart-empty'>未选择果切</view>
+      </view>
+      <view bindtap='checkout' class='btn-create-order {{cartinfo.totalPrice > 0 ? "submitable" : ""}}' data-disabled='{{cartinfo.totalPrice == 0 ? true : false}}'>去结算</view>
+    </view>
+  </view>
+</view>
+<view class='cover {{showCartDetail ? "cover-opn" : ""}}' data-expand-cart-detail='{{showCartDetail}}' bindtap='toggleCartDetail'></view>

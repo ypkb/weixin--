@@ -1,0 +1,29 @@
+<!--order.wxml-->
+<view class="container padding-20rpx">
+  <block wx:for='{{orderlist}}' wx:key='item' wx:for-item='order' wx:for-index='idx1'>
+    <view class='flexible {{idx1 > 0 ? "border-top" : ""}}'>
+      <view class='shop-thumbnail'>
+        <image style='width:100rpx;height:100rpx;' src='../../assets/guoqie01.jpg'></image>
+      </view>
+      <view class='order-info'>
+        <view class='order-title'>
+          <view class='shop-name'>
+            <view class='title'>果果本色（江苏省睢宁县睢城镇）</view>
+            <view>{{order.createTime}}</view>
+          </view>
+          <view class='order-status'>订单已送达</view>
+        </view>
+        <view class='order-detail'>
+          <view class='product-name'>
+            <block wx:for='{{order.basket}}' wx:key='product' wx:for-index='idx2' wx:for-item='product'>
+              <!-- <text>这是第{{idx2}}</text> -->
+              <text wx:if='{{idx2 > 0}}'>+</text>
+              <text>{{product.name}}x{{product.num}}盘</text>
+            </block>
+          </view>
+          <view class='total-price'>¥{{order.totalPrice}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

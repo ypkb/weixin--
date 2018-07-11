@@ -1,0 +1,47 @@
+.padding-20rpx{
+  padding: 20rpx;
+}
+.flexible{
+  display: flex;
+  position: relative;
+  padding: 20rpx 0;
+}
+.border-top::before{
+  content: '';
+  width: 100%;
+  height: 4rpx;
+  background-color: #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.shop-thumbnail{
+  flex: 1;
+}
+.order-info{
+  flex: 5;
+  font-size: 30rpx;
+}
+.order-title{
+  display: flex;
+}
+.shop-name{
+  flex: 2;
+}
+.shop-name .title{
+  font-weight: bold;
+}
+.order-status{
+  flex: 1;
+  text-align: right;
+}
+.order-detail{
+  display: flex;
+}
+.product-name{
+  flex: 2;
+}
+.total-price{
+  flex: 1;
+  text-align: right;
+}

@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"name": "特色果切1",
+		"content": "苹果、香蕉、奇异果、火龙果、百香果",
+		"price": 20,
+		"thumbnail": "../../assets/guoqie01.jpg",
+		"salesMonthly": 50,
+		"praise": "100%"
+	},
+	{
+		"id": 2,
+		"name": "特色果切2",
+		"content": "葡萄、樱桃、黄桃",
+		"price": 10,
+		"thumbnail": "../../assets/guoqie01.jpg",
+		"salesMonthly": 20,
+		"praise": "100%"
+	},
+	{
+		"id": 3,
+		"name": "特色果切3",
+		"content": "西瓜、哈密瓜、甜瓜、香瓜",
+		"price": 15,
+		"thumbnail": "../../assets/guoqie01.jpg",
+		"salesMonthly": 30,
+		"praise": "100%"
+	},
+	{
+		"id": 4,
+		"name": "特色果切4",
+		"content": "奇异果、黄桃、柚子、血橙",
+		"price": 30,
+		"thumbnail": "../../assets/guoqie01.jpg",
+		"salesMonthly": 40,
+		"praise": "100%"
+	}
+]

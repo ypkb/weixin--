@@ -1,0 +1,50 @@
+<!--pages/checkout/checkout.wxml-->
+<view class='container bg'>
+  <view class='delivery-info'>
+    <text>订单配送至</text>
+    <view class='delivery-to-address'>
+      合生财富广场X座xxx
+    </view>
+    <view class='delivery-to-customer'>
+      Yiidot(先生) 18011111111
+    </view>
+  </view>
+  <view class='order-detail'>
+    <view class='shop-name'>
+      果果本色(江苏省睢宁县睢城镇）
+    </view>
+    <view class='order-list'>
+      <block wx:for='{{cartinfo.products}}' wx:key='{{item.id}}' wx:for-index='idx' wx:if='{{item.num > 0}}'>
+        <view class='item'>
+          <image class='thumbnail' src='../../assets/guoqie01.jpg'></image>
+          <text class='name'>{{item.name}}</text>
+          <text class='num'>x{{item.num}}</text>
+          <text class='price'>¥{{item.price * item.num}}</text>
+        </view>
+      </block>
+    </view>
+    <view class='extra-costs'>
+      <view class='box'>
+        <view class='cost-name'>
+          <text class='tag'>包装费</text> 餐盒
+        </view>
+        <view class='cost'>¥{{extra_costs.box_cost}}</view>
+      </view>
+      <view class='delivery-cost'>
+        <view class='cost-name'>
+          <text class='tag'>配送费</text> 配送费
+        </view>
+        <view class='cost'>¥{{extra_costs.delivery_cost}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='cart'>
+      <view class='cart-info'>
+        <text class='total-price'>¥{{cartinfo.totalPrice + extra_costs.box_cost + extra_costs.delivery_cost}}</text>
+        <text class='benifit'>暂无优惠活动</text>
+      </view>
+      <view bindtap='submitOrder' class='btn-create-order {{submitable ? "submitable" : ""}}'>确认支付</view>
+    </view>
+  </view>
+</view>
